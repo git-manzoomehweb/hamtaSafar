@@ -1,0 +1,201 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  lid="2"
+  mid="1"
+  usedforid="[##cms.query.id##]"
+>
+  <member request="json-ld" type="scalar" name="json" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="1"
+  lid="2"
+  usedforid="[##cms.query.id##]"
+>
+  <member propertyid="7249" name="view" type="view" />
+  <member name="data" type="view" request="rdfa" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="media"
+  lid="2"
+  name="db"
+  usedforid="[##cms.query.id##]"
+  sourcemid="article"
+>
+  <member type="list" name="gallery" format="4" order="ord"></member>
+</basis>
+<basis
+  core="dbsource"
+  source="userbehavior"
+  name="db"
+  usedforid="[##cms.query.id##]"
+>
+  <member name="comment" type="list" order="ord" request="listcomment" />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Hamta tourism agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body class="relative bg-[#f4f4f5]">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full">
+      <div class="w-full relative h-[277px] mb-7">
+        <basis core="list" datamembername="db.gallery">
+          <else-layout>
+            <img
+              loading="lazy"
+              width="1280"
+              height="448"
+              class="w-full h-full z-0 object-cover"
+              src="[##cms.cms.cdn##]/images/newsbg.jpg"
+              alt="newsbg"
+            />
+          </else-layout>
+          <layout> @child </layout>
+          <face filter="RowNumber=1">
+            <img
+              loading="lazy"
+              width="1920"
+              height="277"
+              class="w-full h-full z-0 object-cover"
+              src="@largeIMG"
+              alt="article"
+            />
+          </face>
+        </basis>
+
+        <div
+          class="absolute bottom-0 w-full bg-[#10101099] h-[79px] !text-white flex left-0 flex-col justify-center items-center gap-2"
+        >
+          <basis core="print" datamembername="db.view">
+            <face filter="TypeID=150">
+              <h1 class="text-[24px]">@text</h1>
+            </face>
+          </basis>
+
+          <ul class="flex items-center gap-1 !text-sm">
+            <li>
+              <a href="/" class="text-sm hover:!text-primary-400">home</a>
+            </li>
+            <li><</li>
+            <li>
+              <a href="/news" class="text-sm hover:!text-primary-400">news</a>
+            </li>
+            <!-- <li>></li>
+            <basis core="print" datamembername="db.view">
+              <face filter="TypeID=150">
+                <li>@text</li>
+              </face>
+            </basis> -->
+          </ul>
+        </div>
+      </div>
+      <section class="w-full relative flex mb-10 justify-center">
+        <div
+          class="w-full relative lg:w-[950px] xl:!w-[1280px] h-full flex gap-4"
+        >
+          <basis core="print" datamembername="db.view">
+            <layout>
+              <div
+                class="w-[75%] bg-white py-8 px-5 flex flex-col gap-3 rounded-3xl"
+              >
+                @child
+              </div>
+            </layout>
+            <face
+              filter="TypeID<>150 and TypeID<>159 and TypeID<>200 and TypeID<>128"
+            >
+              <h2 id="@valueID" class="text-xl text-zinc-900">@text</h2>
+              <div class="text-sm w-full vfc-articles flex flex-wrap gap-3">
+                @largetext
+              </div>
+            </face>
+          </basis>
+          <basis core="print" datamembername="db.view">
+            <layout>
+              <div class="w-[25%] relative">
+                <div
+                  class="w-full h-[405px] top-4 sticky px-5 py-7 rounded-3xl flex flex-col gap-4 bg-white"
+                >
+                  <p class="w-full pb-3 mb-3 border-b border-zinc-200">
+                    table of contents
+                  </p>
+
+                  @child
+                </div>
+              </div>
+            </layout>
+            <face
+              filter="TypeID<>150 and TypeID<>159 and TypeID<>200 and TypeID<>128 and text <> ''"
+            >
+              <p
+                data-id="@valueID"
+                onclick="Set_Offset_Item(this)"
+                class="pl-4 set-bfr2 relative text-zinc-500 cursor-pointer hover:text-zinc-900"
+              >
+                @text
+              </p>
+            </face>
+          </basis>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

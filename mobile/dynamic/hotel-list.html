@@ -1,0 +1,528 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="bannerimage"
+    type="tree"
+    request="cat"
+    parentid=""
+    postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="213979"
+>
+  <member
+    name="hotel-list"
+    type="list"
+    link="hotel.bc"
+    propertyid="7244,7246,7245,3087637,3087638,3087639,3087640"
+    perpage="16"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="288x203"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="5"
+    parentname="hotel-list"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="18"
+  name="db"
+  usedforid="[##cms.query.catid##]"
+>
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+
+<basis
+  core="dbsource"
+  name="db"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  usedforid="2375846"
+>
+  <member name="faq" type="view" />
+</basis>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Hamta tourism agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full overflow-x-hidden">
+      <section class="w-full h-fit flex flex-col gap-2 relative mb-10">
+        <div
+          class="w-full h-[50%] z-[2] absolute top-0 left-0 flex justify-center"
+        ></div>
+        <div class="w-full h-fit z-0 bg-[#000C46] rounded-r-[34px]">
+          <div
+            class="w-full lg:w-[950px] px-5 py-5 xl:!w-[1280px] !text-white justify-center h-full flex flex-col"
+          >
+            <basis core="print" datamembername="db.scalar">
+              <face>
+                <h1 class="text-[20px]">@column1</h1>
+              </face>
+            </basis>
+
+            <ul class="flex items-center gap-1 !text-sm">
+              <li>
+                <a href="/" class="text-sm hover:!text-primary-400">home</a>
+              </li>
+              <li>></li>
+              <basis core="print" datamembername="db.scalar">
+                <face>
+                  <li>@column1</li>
+                </face>
+              </basis>
+            </ul>
+            <p class="text-[36px] mt-8">Welcome</p>
+            <h2 class="text-[36px]">Book now, relax!</h2>
+          </div>
+        </div>
+        <basis core="print" datamembername="db.bannerimage">
+          <face>
+            <img
+              loading="lazy"
+              width="1044"
+              height="625"
+              src="@image"
+              alt="@title"
+              class="w-full z-0 h-[50%] rounded-l-[34px]"
+            />
+          </face>
+        </basis>
+      </section>
+      <basis core="list" datamembername="db.hotel-list">
+        <layout>
+          <section class="w-full mb-10 px-5 flex justify-center">
+            <div class="w-full grid grid-cols-1 gap-4">@child</div>
+          </section>
+        </layout>
+        <face filter="link is null">
+          <div
+            class="h-fit pb-3 relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              loading="lazy"
+              width="288"
+              height="203"
+              src="@00288X00203prp"
+              alt="@title"
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="38"
+                  src="[##cms.cms.cdn##]/images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">@prp_3087640</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">@prp_3087637</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white uppercase">@prp_3087638</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] line-clamp-2 z-[2]">
+              @title
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <div class="w-full flex h-12 flex-col gap-3">
+                <p
+                  class="text-xs text-zinc-800 pl-5 line-clamp-1 relative set-bfr"
+                >
+                  @prp_7246
+                </p>
+                <p
+                  class="text-xs text-zinc-800 pl-5 line-clamp-1 relative set-bfr"
+                >
+                  @prp_7245
+                </p>
+              </div>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">@prp_3087639</p>
+              </div>
+              <a
+                href="/hotel.bc?lid=2&id=@id"
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+        </face>
+        <face>
+          <div
+            class="h-fit pb-3 relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              loading="lazy"
+              width="288"
+              height="203"
+              src="@00288X00203prp"
+              alt="@title"
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="38"
+                  src="[##cms.cms.cdn##]/images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">@prp_3087640</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">@prp_3087637</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white uppercase">@prp_3087638</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] line-clamp-2 z-[2]">
+              @title
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <div class="w-full flex h-12 flex-col gap-3">
+                <p
+                  class="text-xs text-zinc-800 pl-5 line-clamp-1 relative set-bfr"
+                >
+                  @prp_7246
+                </p>
+                <p
+                  class="text-xs text-zinc-800 pl-5 line-clamp-1 relative set-bfr"
+                >
+                  @prp_7245
+                </p>
+              </div>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">@prp_3087639</p>
+              </div>
+              <a
+                href="@link"
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+        </face>
+      </basis>
+      <div class="w-full flex mb-10 justify-center items-center gap-4">
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@sta='pre')">
+            <a
+              class="w-12 h-12 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              aria-label="angle-left"
+            >
+              <svg
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 15L1.5 8L8.5 1"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@page=[##cms.query.pagenum|(1)##])">
+            <a
+              class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+            >
+              @page
+            </a>
+          </face>
+          <face
+            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
+          >
+            <a
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+            >
+              @page
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@sta='nex')">
+            <a
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              aria-label="angle-right"
+              class="w-12 h-12 rotate-180 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+            >
+              <svg
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 15L1.5 8L8.5 1"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+      </div>
+
+      <section class="w-full mb-10 flex justify-center">
+        <div
+          class="w-full px-5 lg:w-[950px] xl:!w-[1280px] flex flex-col items-center gap-8"
+        >
+          <h3 class="w-fit text-[36px] text-zinc-800">faq</h3>
+          <div class="w-full flex flex-col gap-4">
+            <basis core="print" datamembername="db.faq">
+              <layout>
+                <div class="w-full">
+                  <div class="flex flex-col w-full common-questions">
+                    <div
+                      id="q-box-1"
+                      class="parent-box flex flex-col w-full gap-2 pt-4"
+                    >
+                      @child
+                    </div>
+                  </div>
+                </div>
+              </layout>
+              <face filter="prpID<>7243">
+                <div
+                  class="flex group box-container rounded-full border items-center justify-center border-secondary-500 bg-primary-50 w-full cursor-pointer transition-1 flex-col gap-2"
+                >
+                  <div class="flex w-full gap-2 p-3 h-full items-center">
+                    <span class="hidden RowNumber_set">@RowNumber</span>
+                    <div
+                      class="flex multi-nmb justify-center items-center w-12 h-12 bg-secondary-500 rounded-full text-white"
+                    ></div>
+                    <div
+                      id="question"
+                      class="text-sm w-[85%] group-hover:text-secondary-800 leading-6 text-zinc-900"
+                    >
+                      @text
+                    </div>
+
+                    <span class="hidden"></span>
+                  </div>
+                  <div
+                    id="answer"
+                    class="text-sm w-full px-5 pb-5 font-normal hidden transition-all duration-300 ease-in-out leading-6 text-secondary-900"
+                  >
+                    @largetext
+                  </div>
+                </div>
+              </face>
+            </basis>
+
+            <div
+              class="w-full overflow-hidden bg-secondary-600 h-fit rounded-[34px] flex flex-col-reverse p-5 gap-3 items-center"
+            >
+              <p class="text-white show_answer text-sm"></p>
+              <img
+                loading="lazy"
+                src="[##cms.cms.cdn##]/images/faq.jpg"
+                width="204"
+                height="204"
+                alt="faq-pic"
+                class="rounded-xl w-full h-[204px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

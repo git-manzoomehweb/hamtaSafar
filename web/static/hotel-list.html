@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="relative">
+    <header
+      class="w-full px-5 lg:!px-0 bg-white flex lg:!h-[84px] h-[64px] justify-center"
+    >
+      <div
+        class="w-full lg:w-[950px] xl:!w-[1280px] h-full flex items-center justify-between"
+      >
+        <a href="/">
+          <img
+            width="366"
+            height="120"
+            aria-label="hamta-logo"
+            src="../../images/logo.png"
+            alt="hamta-logo"
+            class="lg:!w-[183px] lg:!h-[60px] w-[117px] h-[38px]"
+          />
+        </a>
+        <div class="lg:!flex desktop-navigation hidden gap-14 items-center">
+          <a
+            href="/"
+            class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+            >home</a
+          >
+          <a
+            href="/"
+            class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+            >services</a
+          >
+          <a
+            href="/"
+            class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+            >News</a
+          >
+          <a
+            href="/"
+            class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+            >Contact us</a
+          >
+        </div>
+        <div
+          class="flex items-center gap-4 lg:!w-fit w-full send-from-header-to-nav"
+        >
+          <span
+            class="w-12 h-12 flex justify-center bg-zinc-800 rounded-full cursor-pointer hover:bg-primary-700 transition-all hover:shadow-lg items-center"
+          >
+            <svg
+              width="24"
+              height="26"
+              viewBox="0 0 24 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.00104 17.7295H13.3345C14.6233 17.7295 15.6675 16.6853 15.6675 15.3965C15.6675 14.1077 14.6233 13.0626 13.3345 13.0626H10.6679C9.37904 13.0626 8.33398 12.0184 8.33398 10.7295C8.33398 9.44072 9.37904 8.39648 10.6679 8.39648H15.0013"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.002 20.0625V6.0625"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <div
+            class="h-12 lg:!w-[187px] w-[80%] rounded-3xl bg-primary-500"
+            id="login"
+          ></div>
+        </div>
+        <button
+          id="open-menu"
+          class="lg:!hidden flex cursor-pointer"
+          type="button"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20 20H4C3.448 20 3 19.553 3 19C3 18.447 3.448 18 4 18H20C20.552 18 21 18.447 21 19C21 19.553 20.552 20 20 20Z"
+              fill="#0057F8"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20 6H4C3.448 6 3 5.553 3 5C3 4.447 3.448 4 4 4H20C20.552 4 21 4.447 21 5C21 5.553 20.552 6 20 6Z"
+              fill="#0057F8"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20 13H4C3.448 13 3 12.553 3 12C3 11.447 3.448 11 4 11H20C20.552 11 21 11.447 21 12C21 12.553 20.552 13 20 13Z"
+              fill="#0057F8"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div
+      class="fixed shooting bottom-[261px] hidden lg:!flex flex-col gap-3 left-5"
+    >
+      <a class="first transition-all duration-300 ease-in-out" href="">
+        <img
+          width="114"
+          height="110"
+          src="../../images/packet-2.png"
+          alt="whatsapp"
+          class="w-[57px] h-[55px]"
+        />
+      </a>
+      <a class="second transition-all duration-300 ease-in-out" href="mailto">
+        <img
+          width="114"
+          height="104"
+          src="../../images/packet.png"
+          alt="mail"
+          class="w-[57px] h-[57px]"
+        />
+      </a>
+    </div>
+    <nav
+      class="w-screen z-[50] h-full transition-all duration-300 ease-in-out shadow-2xl mobile-menu fixed top-0 translate-x-[1280px] py-6 left-0 bg-white flex lg:!hidden flex-col gap-5 px-5"
+    >
+      <div class="flex items-center mb-14 justify-between w-full">
+        <img
+          width="366"
+          height="120"
+          aria-label="hamta-logo"
+          src="../../images/logo.png"
+          alt="hamta-logo"
+          class="w-[183px] h-[60px]"
+        />
+        <button id="closer-menu" type="button">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.81295 6.50009L12.7277 1.58528C13.0908 1.22221 13.0908 0.635366 12.7277 0.2723C12.3646 -0.0907666 11.7778 -0.0907666 11.4148 0.2723L6.5 5.18711L1.58525 0.2723C1.22219 -0.0907666 0.635353 -0.0907666 0.272294 0.2723C-0.0907647 0.635366 -0.0907647 1.22221 0.272294 1.58528L5.18704 6.50009L0.272294 11.415C-0.0907647 11.778 -0.0907647 12.3649 0.272294 12.7279C0.453359 12.909 0.691065 13 0.928771 13C1.16648 13 1.40418 12.909 1.58525 12.7279L6.5 7.81317L11.4148 12.7279C11.5958 12.909 11.8335 13 12.0712 13C12.3089 13 12.5466 12.909 12.7277 12.7279C13.0908 12.3649 13.0908 11.778 12.7277 11.415L7.81295 6.50009Z"
+              fill="#FF90B5"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="w-full give-it-from-header flex gap-4"></div>
+      <div class="flex flex-col desktop-navigation gap-10 mt-8">
+        <a
+          href="/"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >home</a
+        >
+        <a
+          href="/"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >services</a
+        >
+        <a
+          href="/"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >News</a
+        >
+        <a
+          href="/"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >Contact us</a
+        >
+      </div>
+    </nav>
+    <main class="w-full overflow-x-hidden">
+      <section class="w-full h-[625px] flex gap-2 relative mb-10">
+        <div
+          class="w-full h-full z-[2] absolute top-0 left-0 flex justify-center"
+        >
+          <div
+            class="w-full lg:w-[950px] pl-3 xl:!w-[1280px] !text-white justify-center h-full flex flex-col"
+          >
+            <h1 class="text-[36px]">Hotel</h1>
+            <ul class="flex items-center gap-1 !text-sm">
+              <li>
+                <a href="/" class="text-sm hover:!text-primary-400">home</a>
+              </li>
+              <li>></li>
+              <li>hotels</li>
+            </ul>
+            <p class="text-[48px] mt-8">Welcome</p>
+            <h2 class="text-[96px]">Antalia city</h2>
+          </div>
+        </div>
+        <div class="w-[42%] z-0 h-full bg-[#000C46] rounded-r-[34px]"></div>
+        <img
+          width="1044"
+          height="625"
+          src="../../images/hotel-list.jpg"
+          alt=""
+          class="w-[58%] z-0 h-full rounded-l-[34px]"
+        />
+      </section>
+      <section class="w-full mb-10 flex justify-center">
+        <div class="w-full lg:w-[950px] xl:!w-[1280px] grid grid-cols-4 gap-4">
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+          <div
+            class="!h-[421px] relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              width="311"
+              height="203"
+              src="../../images/swiper.jfif"
+              alt=""
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  width="40"
+                  height="38"
+                  src="../../images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">2.3</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">B.B</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  width="48"
+                  height="48"
+                  src="../../images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-primary-900 uppercase">Viwe</span>
+              </div>
+            </div>
+            <h3 class="px-5 text-xl absolute top-[180px] z-[2]">
+              Songkran ,the biggest water splashing
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <p class="text-xs text-zinc-800 pl-5 relative set-bfr">
+                Lorem ipsum dolor sit amet,
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">230$</p>
+              </div>
+              <a
+                href=""
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="w-full flex mb-10 justify-center items-center gap-4">
+        <a
+          href=""
+          class="w-12 h-12 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+          ><svg
+            width="10"
+            height="16"
+            viewBox="0 0 10 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.5 15L1.5 8L8.5 1"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <a
+          href=""
+          class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+          >1
+        </a>
+        <a
+          href=""
+          class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+          >2
+        </a>
+        <a
+          href=""
+          class="w-12 h-12 rotate-180 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+          ><svg
+            width="10"
+            height="16"
+            viewBox="0 0 10 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8.5 15L1.5 8L8.5 1"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <section class="w-full mb-10 flex justify-center">
+        <div
+          class="w-full lg:w-[950px] xl:!w-[1280px] flex flex-col items-center gap-8"
+        >
+          <h3 class="w-fit text-[36px] text-zinc-800">faq</h3>
+          <div class="w-full flex gap-4">
+            <div class="w-[40%]">
+              <div class="flex flex-col w-full common-questions">
+                <div
+                  id="q-box-1"
+                  class="parent-box flex flex-col w-full gap-2 pt-4"
+                >
+                  <div
+                    class="flex group box-container bg-primary-50 !h-[64px] rounded-[36px] border bg-white items-center justify-center border-secondary-500 w-full cursor-pointer transition-1 flex-col gap-2"
+                  >
+                    <div class="flex w-full gap-2 p-3 h-full items-center">
+                      <div
+                        class="flex justify-center items-center w-12 h-12 bg-secondary-500 rounded-full text-white"
+                      >
+                        1
+                      </div>
+                      <p
+                        id="question"
+                        class="text-sm w-[85%] group-hover:text-secondary-800 leading-6 text-zinc-900"
+                      >
+                        How can I travel without having a lot of money?
+                      </p>
+
+                      <span class="hidden"></span>
+                    </div>
+                    <div
+                      id="answer"
+                      class="text-sm px-5 pb-5 font-normal hidden transition-all duration-300 ease-in-out leading-6 text-secondary-900"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Possimus aliquam cupiditate recusandae facilis
+                        voluptatem sed aspernatur dignissimos voluptas fugiat?
+                        Placeat fugiat sint magni optio sed excepturi, aliquam
+                        perspiciatis temporibus impedit?
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex group box-container bg-primary-50 !h-[64px] rounded-[36px] border bg-white items-center justify-center border-secondary-500 w-full cursor-pointer transition-1 flex-col gap-2"
+                  >
+                    <div class="flex w-full gap-2 p-3 h-full items-center">
+                      <div
+                        class="flex justify-center items-center w-12 h-12 bg-secondary-500 rounded-full text-white"
+                      >
+                        1
+                      </div>
+                      <p
+                        id="question"
+                        class="text-sm w-[85%] group-hover:text-secondary-800 leading-6 text-zinc-900"
+                      >
+                        How can I travel without having a lot of money?
+                      </p>
+
+                      <span class="hidden"></span>
+                    </div>
+                    <div
+                      id="answer"
+                      class="text-sm px-5 pb-5 font-normal hidden transition-all duration-300 ease-in-out leading-6 text-secondary-900"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Possimus aliquam cupiditate recusandae facilis
+                        voluptatem sed aspernatur dignissimos voluptas fugiat?
+                        Placeat fugiat sint magni optio sed excepturi, aliquam
+                        perspiciatis temporibus impedit?
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex group box-container bg-primary-50 !h-[64px] rounded-[36px] border bg-white items-center justify-center border-secondary-500 w-full cursor-pointer transition-1 flex-col gap-2"
+                  >
+                    <div class="flex w-full gap-2 p-3 h-full items-center">
+                      <div
+                        class="flex justify-center items-center w-12 h-12 bg-secondary-500 rounded-full text-white"
+                      >
+                        1
+                      </div>
+                      <p
+                        id="question"
+                        class="text-sm w-[85%] group-hover:text-secondary-800 leading-6 text-zinc-900"
+                      >
+                        How can I travel without having a lot of money?
+                      </p>
+
+                      <span class="hidden"></span>
+                    </div>
+                    <div
+                      id="answer"
+                      class="text-sm px-5 pb-5 font-normal hidden transition-all duration-300 ease-in-out leading-6 text-secondary-900"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Possimus aliquam cupiditate recusandae facilis
+                        voluptatem sed aspernatur dignissimos voluptas fugiat?
+                        Placeat fugiat sint magni optio sed excepturi, aliquam
+                        perspiciatis temporibus impedit?
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex group box-container bg-primary-50 !h-[64px] rounded-[36px] border bg-white items-center justify-center border-secondary-500 w-full cursor-pointer transition-1 flex-col gap-2"
+                  >
+                    <div class="flex w-full gap-2 p-3 h-full items-center">
+                      <div
+                        class="flex justify-center items-center w-12 h-12 bg-secondary-500 rounded-full text-white"
+                      >
+                        1
+                      </div>
+                      <p
+                        id="question"
+                        class="text-sm w-[85%] group-hover:text-secondary-800 leading-6 text-zinc-900"
+                      >
+                        How can I travel without having a lot of money?
+                      </p>
+
+                      <span class="hidden"></span>
+                    </div>
+                    <div
+                      id="answer"
+                      class="text-sm px-5 pb-5 font-normal hidden transition-all duration-300 ease-in-out leading-6 text-secondary-900"
+                    >
+                      <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Possimus aliquam cupiditate recusandae facilis
+                        voluptatem sed aspernatur dignissimos voluptas fugiat?
+                        Placeat fugiat sint magni optio sed excepturi, aliquam
+                        perspiciatis temporibus impedit?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-[60%] px-7 bg-secondary-600 h-[268px] rounded-[34px] flex gap-3 items-center"
+            >
+              <p class="text-white text-sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae
+                congue mauris rhoncus aenean vel elit scelerisque. In egestas
+                erat imperdiet sed euismod nisi porta lorem mollis. Morbi
+                tristique senectus et netus. Mattis pellentesque id nibh tortor
+                id aliquet lectus proin. Sapien faucibus et molestie ac feugiat
+                sed lectus vestibulum.
+              </p>
+              <img
+                src="../../images/faq.jpg"
+                width="204"
+                height="204"
+                alt="faq-pic"
+                class="rounded-xl w-[204px] h-[204px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="w-full flex justify-center py-6 bg-[#000C46] px-5 lg:!px-0">
+      <div
+        class="w-full lg:w-[950px] xl:!w-[1280px] h-full flex flex-col gap-8"
+      >
+        <div
+          class="w-full flex lg:!flex-row flex-col lg:!gap-0 gap-4 lg:!items-center justify-between"
+        >
+          <a href="/">
+            <img
+              width="366"
+              height="120"
+              aria-label="hamta-logo"
+              src="../../images/logo.png"
+              alt="hamta-logo"
+              class="w-[183px] h-[60px]"
+            />
+          </a>
+          <div
+            class="flex lg:!flex-row flex-col lg:!gap-14 gap-4 lg:!mt-0 mt-3 lg:!items-center"
+          >
+            <a
+              href="/"
+              class="uppercase w-fit relative text-white hover:text-secondary-500 transition-all"
+              >home</a
+            >
+            <a
+              href="/"
+              class="uppercase w-fit relative text-white hover:text-secondary-500 transition-all"
+              >Products</a
+            >
+            <a
+              href="/"
+              class="uppercase w-fit relative text-white hover:text-secondary-500 transition-all"
+              >News</a
+            >
+            <a
+              href="/"
+              class="uppercase w-fit relative text-white hover:text-secondary-500 transition-all"
+              >About Us</a
+            >
+          </div>
+          <div
+            class="flex items-center lg:!mt-0 mt-3 lg:!w-fit w-full justify-between gap-4 lg:!justify-start"
+          >
+            <a
+              href=""
+              class="w-12 h-12 rounded-full flex justify-center items-center border border-white hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out hover:shadow-xl"
+            >
+              <img
+                width="39"
+                height="40"
+                src="../../images/Telegram.png"
+                alt="telegram"
+                class="w-[26px] h-[26px]"
+              />
+            </a>
+
+            <a
+              href=""
+              class="w-12 h-12 rounded-full flex justify-center items-center border border-white hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out hover:shadow-xl"
+            >
+              <img
+                width="40"
+                height="40"
+                src="../../images/Linkedin.png"
+                alt="Linkedin"
+                class="w-[26px] h-[26px]"
+              />
+            </a>
+
+            <a
+              href=""
+              class="w-12 h-12 rounded-full flex justify-center items-center border border-white hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out hover:shadow-xl"
+            >
+              <img
+                width="40"
+                height="40"
+                src="../../images/Twitter.png"
+                alt="Twitter"
+                class="w-[26px] h-[26px]"
+              />
+            </a>
+            <a
+              href=""
+              class="w-12 h-12 rounded-full flex justify-center items-center border border-white hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out hover:shadow-xl"
+            >
+              <img
+                width="39"
+                height="40"
+                src="../../images/Instagram.png"
+                alt="Instagram"
+                class="w-[26px] h-[26px]"
+              />
+            </a>
+          </div>
+        </div>
+        <div
+          class="w-full flex lg:!flex-row flex-col lg:!gap-0 gap-9 lg:!items-center justify-between"
+        >
+          <div class="flex items-center gap-2">
+            <img
+              width="45"
+              height="50"
+              src="../../images/Building-office.png"
+              alt="Building"
+              class="w-[33px] h-[33px]"
+            />
+            <div class="flex flex-col gap-1">
+              <p class="text-secondary-500 text-sm uppercase">Address</p>
+              <p class="text-white text-xs">
+                Office No. 306, Malik Salma Ali Saif Bin Harib Al Muhairi
+                Building - Al Murar Muraqqabat
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <img
+              width="45"
+              height="47"
+              src="../../images/Calling.png"
+              alt="Calling"
+              class="w-[33px] h-[33px]"
+            />
+            <div class="flex flex-col gap-1">
+              <p class="text-secondary-500 text-sm uppercase">Contact Us</p>
+              <a
+                href="tel:+98556523113"
+                class="text-white hover:text-secondary-500 text-xs"
+              >
+                +98556523113
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <img
+              width="50"
+              height="50"
+              src="../../images/email.png"
+              alt="email"
+              class="w-[33px] h-[33px]"
+            />
+            <div class="flex flex-col gap-1">
+              <p class="text-secondary-500 text-sm uppercase">email</p>
+              <a
+                href="mailto:Sapport@yahoo.com"
+                class="text-white hover:text-secondary-500 text-xs"
+              >
+                Sapport@yahoo.com
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center mt-3 gap-2 w-full lg:!flex-row flex-col-reverse"
+        >
+          <div class="lg:!w-[20%] w-full flex lg:!justify-start justify-center">
+            <a
+              class="text-secondary-700 hover:text-white text-xs"
+              href="https://basisfly.ae/"
+              >Web Design & Online Reservation By</a
+            >
+          </div>
+          <div
+            class="flex items-center w-full lg:!w-[80%] justify-center gap-4 lg:!justify-between"
+          >
+            <a href="https://basisfly.ae/">
+              <img
+                width="102"
+                height="26"
+                class="w-[68px] h-[17px]"
+                src="../../images/basisfly-logo.png"
+                alt="basisfly-logo"
+                aria-label="basisfly-logo"
+              />
+            </a>
+            <img
+              width="135"
+              height="23"
+              src="../../images/Trust_logo.png"
+              alt="Trust_logo"
+              class="w-[68px] h-[17px]"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+  <script src="../../js/hamta-core.js"></script>
+</html>

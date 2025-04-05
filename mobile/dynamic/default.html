@@ -1,0 +1,447 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2375786"
+>
+  <member name="before-login" type="view" order="ord" />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="213979"
+>
+  <member
+    name="hotel-list"
+    type="list"
+    link="hotel.bc"
+    propertyid="7244,7246,7245,3087637,3087638,3087639,3087640"
+    perpage="9"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="288x203"
+  />
+</basis>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <!-- Title & Description -->
+    <title>Hamta tourism agency</title>
+    <meta
+      name="description"
+      content="Hamta Travel Agency offers the best domestic and international tours, hotel bookings, flight tickets, and visa services to make your journey unforgettable. Enjoy a luxurious, affordable, and hassle-free trip with us. Plan your next adventure with Hamta today!"
+    />
+    <!-- canonical for Homepage -->
+    <link
+      rel="canonical"
+      href="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <!-- fill items with Agancy Info -->
+    <meta name="og:locale" content="En_Us" />
+    <meta property="og:title" content=" Hamta tourism agency " />
+    <meta
+      property="og:url"
+      content="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hamta tourism agency " />
+    <meta
+      property="og:image"
+      content="[##cms.cms.cdn##]/images/custom_image_1200x630.png"
+    />
+    <meta property="og:image:alt" content="Hemta Tourism Agency Logo" />
+    <meta
+      property="og:description"
+      content="Hamta Travel Agency offers the best domestic and international tours, hotel bookings, flight tickets, and visa services to make your journey unforgettable. Enjoy a luxurious, affordable, and hassle-free trip with us. Plan your next adventure with Hamta today!"
+    />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content=" " />
+    <meta name="twitter:creator" content="Hamta tourism" />
+    <meta
+      name="twitter:image"
+      content="[##cms.cms.cdn##]/images/custom_image_1200x630.png"
+    />
+    <meta name="twitter:title" content=" " />
+    <meta name="twitter:description" content=" " />
+    <meta property="seo:robots" content="index, follow" />
+    <!-- samandehi-enamad optional -->
+    <meta name="enamad" content="" />
+    <meta name="samandehi" content="" />
+    <!-- canonical for Homepage -->
+    <link
+      rel="canonical"
+      href="[##cms.request.:scheme##]://[##cms.request.full-url##]"
+    />
+    <script
+      src="[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <!-- fill items with Agancy Info -->
+
+    <!-- pwa metatags -->
+    <basis core="call" file="pwa.inc" lid="2" />
+    <!-- define -->
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="../images/parallax.jpg"
+      fetchpriority="high"
+    />
+    <!-- common styles for all page -->
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+  <body class="relative">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="overflow-x-hidden">
+      <h1 class="absolute top-[-1000px] left-0">hamta travel</h1>
+      <section
+        class="w-full relative mob-home-page flex justify-center h-fit px-5 lg:!px-0"
+      >
+        <span class="w-full z-0 h-full absolute top-0 left-0 gray-grdt"></span>
+        <div
+          class="z-[2] w-full lg:w-[950px] xl:!w-[1280px] flex flex-col my-9 items-center gap-5"
+        >
+          <basis core="print" datamembername="db.before-login">
+            <face filter="prpID=7243">
+              <h2 class="text-white text-center before-login text-[24px]">
+                @Answer
+              </h2>
+            </face>
+            <face filter="prpID=7244">
+              <div
+                class="text-white before-login line-clamp-2 text-sm text-center"
+              >
+                @largetext
+              </div>
+            </face>
+          </basis>
+
+          <div class="w-full flex flex-col items-center justify-center">
+            <div
+              class="search-box-container en w-full flex justify-center load-search-box-in-condition"
+              id="search-box"
+            >
+              <span class="loader"></span>
+            </div>
+          </div>
+
+          <basis core="print" datamembername="db.before-login">
+            <layout>
+              <div class="grid grid-cols-1 gap-2 mt-8 w-full">@child</div>
+            </layout>
+
+            <face filter="valueID=4128622">
+              <div
+                class="def-box h-[100px] rounded-xl flex flex-col gap-2 items-center justify-center"
+              >
+                <img
+                  loading="lazy"
+                  width="97"
+                  height="96"
+                  class="w-12 h-12"
+                  src="[##cms.cms.cdn##]/images/Phone-Call-history.png"
+                  alt="Phone-Call"
+                />
+                <p class="text-white text-xs">@text</p>
+              </div>
+            </face>
+            <face filter="valueID=4128623">
+              <div
+                class="def-box h-[100px] rounded-xl flex flex-col gap-2 items-center justify-center"
+              >
+                <img
+                  loading="lazy"
+                  width="97"
+                  height="96"
+                  class="w-12 h-12"
+                  src="[##cms.cms.cdn##]/images/Mouse-cursor.png"
+                  alt="Mouse"
+                />
+                <p class="text-white text-center text-xs">@text</p>
+              </div>
+            </face>
+            <face filter="valueID=4128624">
+              <div
+                class="def-box h-[100px] rounded-xl flex flex-col gap-2 items-center justify-center"
+              >
+                <img
+                  loading="lazy"
+                  width="97"
+                  height="96"
+                  class="w-12 h-12"
+                  src="[##cms.cms.cdn##]/images/Paper.png"
+                  alt="paper"
+                />
+                <p class="text-white text-center text-xs">@text</p>
+              </div>
+            </face>
+            <face filter="valueID=4128625">
+              <div
+                class="def-box h-[100px] rounded-xl flex flex-col gap-2 items-center justify-center"
+              >
+                <img
+                  loading="lazy"
+                  width="97"
+                  height="96"
+                  class="w-12 h-12"
+                  src="[##cms.cms.cdn##]/images/Earth.png"
+                  alt="Earth"
+                />
+                <p class="text-white text-center text-xs">@text</p>
+              </div>
+            </face>
+          </basis>
+        </div>
+      </section>
+
+      <basis core="list" datamembername="db.hotel-list">
+        <layout>
+          <section class="w-full flex my-9 px-5 justify-center">
+            <div class="w-full lg:w-[950px] xl:!w-[1280px]">
+              <div class="swiper-one h-[1730px] w-full overflow-hidden">
+                <div class="swiper-wrapper">@child</div>
+              </div>
+            </div>
+          </section>
+        </layout>
+        <face filter="link is null">
+          <div
+            class="!h-[421px] swiper-slide relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              loading="lazy"
+              width="288"
+              height="203"
+              src="@00288X00203prp"
+              alt="@title"
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="38"
+                  src="[##cms.cms.cdn##]/images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">@prp_3087640</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">@prp_3087637</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white uppercase">@prp_3087638</span>
+              </div>
+            </div>
+            <h3 class="px-5 line-clamp-2 text-xl absolute top-[180px] z-[2]">
+              @title
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p
+                class="text-xs line-clamp-1 text-zinc-800 pl-5 relative set-bfr"
+              >
+                @prp_7246
+              </p>
+              <p
+                class="text-xs line-clamp-1 text-zinc-800 pl-5 relative set-bfr"
+              >
+                @prp_7245
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">@prp_3087639</p>
+              </div>
+              <a
+                href="/hotel.bc?lid=2&id=@id"
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+        </face>
+        <face>
+          <div
+            class="!h-[421px] swiper-slide relative flex flex-col border border-zinc-200 rounded-[34px] overflow-hidden"
+          >
+            <img
+              loading="lazy"
+              width="288"
+              height="203"
+              src="@00288X00203prp"
+              alt="@title"
+              class="!w-full h-[203px] z-0"
+            />
+            <div class="w-full h-[203px] absolute left-0 top-0 bg-bgtf"></div>
+            <div
+              class="w-full z-[1] absolute top-4 left-0 px-5 flex justify-between items-center"
+            >
+              <div class="flex items-center gap-4">
+                <img
+                  loading="lazy"
+                  width="40"
+                  height="38"
+                  src="[##cms.cms.cdn##]/images/Stroke-1.png"
+                  alt="star"
+                  class="w-[18px] h-[17px] squish"
+                />
+                <span class="text-white">@prp_3087640</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Hot-Drink.png"
+                  alt="Drink"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white">@prp_3087637</span>
+              </div>
+              <svg
+                width="2"
+                height="20"
+                viewBox="0 0 2 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="0.75"
+                  y1="0.5"
+                  x2="0.749999"
+                  y2="19.5"
+                  stroke="white"
+                />
+              </svg>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="48"
+                  height="48"
+                  src="[##cms.cms.cdn##]/images/Pin.png"
+                  alt="pin"
+                  class="h-[24px] w-[24px] squish"
+                />
+                <span class="text-white uppercase">@prp_3087638</span>
+              </div>
+            </div>
+            <h3 class="px-5 line-clamp-2 text-xl absolute top-[180px] z-[2]">
+              @title
+            </h3>
+            <div class="flex flex-col gap-3 w-full mt-12 px-5">
+              <p
+                class="text-xs line-clamp-1 text-zinc-800 pl-5 relative set-bfr"
+              >
+                @prp_7246
+              </p>
+              <p
+                class="text-xs text-zinc-800 line-clamp-1 pl-5 relative set-bfr"
+              >
+                @prp_7245
+              </p>
+              <div class="w-full flex items-center justify-between mt-2">
+                <p class="text-xl text-zinc-900">Price:</p>
+                <p class="text-xl text-zinc-900">@prp_3087639</p>
+              </div>
+              <a
+                href="@link"
+                class="w-full text-sm hover:shadow-lg hover:scale-105 hoverd transition-all bg-secondary-500 text-white rounded-3xl h-12 flex justify-center items-center"
+                >information and reserve
+              </a>
+            </div>
+          </div>
+        </face>
+      </basis>
+    </main>
+    <link
+      href="https://cdn.basiscore.net/basisfly.com/css/reservation_tem_calendar_en.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" lid="2" />
+    <basis core="call" file="Client_RkeyScript.inc" lid="2"></basis>
+  </body>
+</html>

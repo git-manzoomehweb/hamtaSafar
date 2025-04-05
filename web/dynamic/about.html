@@ -1,0 +1,218 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  usedforid="2375854"
+>
+  <member name="about-us" type="view" order="ord" />
+</basis>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Hamta tourism agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full overflow-x-hidden mb-4 flex justify-center">
+      <div
+        class="w-full lg:w-[950px] relative mt-9 mb-7 xl:!w-[1280px] flex flex-col"
+      >
+        <div class="w-full z-0 flex justify-center">
+          <img
+            
+            width="503"
+            height="500"
+            src="[##cms.cms.cdn##]/images/hamta-a-logo.png"
+            alt="hamta-logo"
+            class="w-[503px] "
+          />
+        </div>
+        <div class="w-full flex flex-col mt-[-350px] gap-5 items-center">
+          <ul class="flex z-[1] items-center gap-1 !text-sm !text-zinc-400">
+            <li>
+              <a href="/" class="text-sm text-zinc-400 hover:!text-primary-400"
+                >home</a
+              >
+            </li>
+            <li>></li>
+            <basis core="print" datamembername="db.about-us">
+              <face filter="TypeID=150">
+                <li>@Answer</li>
+              </face>
+            </basis>
+          </ul>
+          <basis core="print" datamembername="db.about-us">
+            <face filter="TypeID=150">
+              <h1 class="text-[36px] z-[1] text-zinc-800">@Answer</h1>
+            </face>
+          </basis>
+
+          <h2 class="text-[36px] text-secondary-500 z-[1]">Hamta travel</h2>
+          <basis core="print" datamembername="db.about-us">
+            <face filter="TypeID=129">
+              <div class="text-sm z-[1]">@largetext</div>
+            </face>
+          </basis>
+
+          <basis core="print" datamembername="db.about-us">
+            <face filter="TypeID=250">
+              <h2 class="text-[36px] z-[1] text-secondary-500 mt-4">@text</h2>
+            </face>
+          </basis>
+          <div class="w-full flex gap-4 my-3">
+            <basis core="print" datamembername="db.about-us">
+              <face filter="TypeID=250">
+                <div class="w-full TypeID250 flex gap-3 text-sm">
+                  @largetext
+                </div>
+              </face>
+            </basis>
+            <!-- 
+            <img
+              loading="lazy"
+              class="w-[50%] h-[344px] rounded-tl-[281px] rounded-b-[281px]"
+              width="610"
+              height="344"
+              src="[##cms.cms.cdn##]/images/the-man.jpg"
+              alt="the-man"
+            /> -->
+          </div>
+          <h3 class="text-[36px] text-secondary-500 mt-4">Contact us</h3>
+          <div class="w-full flex gap-4">
+            <basis core="print" datamembername="db.info">
+              <face filter="TypeID=246">
+                <iframe
+                  defer=""
+                  title="tinab"
+                  class="inline !rounded-lg w-[40%] align-middle !border-0 border-none"
+                  height="185"
+                  loading="lazy"
+                  target="_blank"
+                  allowfullscreen=""
+                  src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"
+                ></iframe>
+              </face>
+            </basis>
+
+            <svg
+              width="1"
+              height="185"
+              viewBox="0 0 1 185"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0.5"
+                y1="2.18561e-08"
+                x2="0.499992"
+                y2="185"
+                stroke="#27B0FF"
+              />
+            </svg>
+            <div class="flex flex-col gap-3 justify-between">
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="45"
+                  height="50"
+                  src="[##cms.cms.cdn##]/images/Building-office.png"
+                  alt="Building"
+                  class="w-[33px] h-[33px]"
+                />
+                <div class="flex flex-col gap-1">
+                  <p class="text-secondary-500 text-sm uppercase">Address</p>
+                  <basis core="print" datamembername="db.info">
+                    <face filter="TypeID=244">
+                      <div class="text-zinc-900 text-xs">@largetext</div>
+                    </face>
+                  </basis>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="45"
+                  height="47"
+                  src="[##cms.cms.cdn##]/images/Calling.png"
+                  alt="Calling"
+                  class="w-[33px] h-[33px]"
+                />
+                <div class="flex flex-col gap-1">
+                  <p class="text-secondary-500 text-sm uppercase">Contact Us</p>
+                  <basis core="print" datamembername="db.info">
+                    <face filter="TypeID=240">
+                      <a
+                        href="tel:@text"
+                        class="text-zinc-900 hover:text-secondary-500 text-xs"
+                      >
+                        @text
+                      </a>
+                    </face>
+                  </basis>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  loading="lazy"
+                  width="50"
+                  height="50"
+                  src="[##cms.cms.cdn##]/images/email.png"
+                  alt="email"
+                  class="w-[33px] h-[33px]"
+                />
+                <div class="flex flex-col gap-1">
+                  <p class="text-secondary-500 text-sm uppercase">email</p>
+                  <basis core="print" datamembername="db.info">
+                    <face filter="TypeID=242">
+                      <a
+                        href="mailto:@text"
+                        class="text-zinc-900 hover:text-secondary-500 text-xs"
+                      >
+                        @text
+                      </a>
+                    </face>
+                  </basis>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

@@ -1,0 +1,314 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="bannerimage"
+    type="tree"
+    request="cat"
+    parentid=""
+    postsql="select * from [db.bannerimage] where catid = [##cms.query.catid##]"
+  />
+</basis>
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="1"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="article-list"
+    type="list"
+    link="article.bc"
+    propertyid="7244,7248"
+    perpage="16"
+    pageno="[##cms.query.pagenum|(1)##]"
+    order="ord"
+    size="419x223"
+  />
+  <member
+    name="paging"
+    type="list"
+    request="paging"
+    count="5"
+    parentname="article-list"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="20"
+  name="db"
+  catid="[##cms.query.catid##]"
+>
+  <member
+    name="navigation"
+    type="tree"
+    request="navcatid"
+    parentid="[##cms.query.catid##]"
+  />
+</basis>
+
+<basis
+  core="dbsource"
+  source="basiscore"
+  lid="2"
+  mid="18"
+  name="db"
+  usedforid="[##cms.query.catid##]"
+>
+  <member name="scalar" type="scalar" typeid="150" />
+</basis>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
+    <meta
+      name="description"
+      content="[##cms.seo.description|(Hamta tourism agency)##]"
+    />
+    <basis
+      core="dbsource"
+      source="hosting"
+      name="tag"
+      urlid="[##cms.seo.urlid##]"
+    >
+      <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+        <link rel="canonical" href="@value" />
+      </face>
+      <face>
+        <meta property="@key" content="@value" />
+      </face>
+    </basis>
+    <link
+      rel="stylesheet"
+      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
+    />
+    <basis core="call" file="pwa.inc" lid="2" />
+    <basis core="call" file="style.inc" lid="2" />
+  </head>
+
+  <body class="relative">
+    <basis core="call" file="header.inc" lid="2" />
+    <main class="w-full overflow-x-hidden">
+      <section class="w-full h-[625px] flex gap-2 relative mb-10">
+        <div
+          class="w-full h-full z-[2] absolute top-0 left-0 flex justify-center"
+        >
+          <div
+            class="w-full lg:w-[950px] pl-3 xl:!w-[1280px] !text-white justify-center h-full flex flex-col"
+          >
+            <basis core="print" datamembername="db.scalar">
+              <face>
+                <h1 class="text-[36px]">@column1</h1>
+              </face>
+            </basis>
+
+            <ul class="flex items-center gap-1 !text-sm">
+              <li>
+                <a href="/" class="text-sm hover:!text-primary-400">home</a>
+              </li>
+              <li>></li>
+              <basis core="print" datamembername="db.scalar">
+                <face>
+                  <li>@column1</li>
+                </face>
+              </basis>
+            </ul>
+            <div class="flex flex-col gap-4 mt-8 w-[477px]">
+              <p class="text-[24px]">📢 Latest Travel News | Stay Informed!</p>
+              <h2 class="text-[14px]">
+                The world of travel is constantly evolving! From the latest
+                travel regulations and restrictions to exciting new
+                destinations, exclusive deals, and special discounts – we've got
+                it all covered. Stay updated with industry news, travel tips,
+                and the best opportunities to make your trips unforgettable. If
+                you're planning your next adventure, having up-to-date
+                information can make your journey smoother and more enjoyable.
+                Stay informed and travel smarter with us! ✈️🌍
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="w-[42%] z-0 h-full bg-[#000C46] rounded-r-[34px]"></div>
+        <basis core="print" datamembername="db.bannerimage">
+          <face filter="image is null">
+            <img
+              loading="lazy"
+              src="[##cms.cms.cdn##]/images/tower.jpg"
+              alt="banner"
+              class="w-[58%] z-0 h-full rounded-l-[34px]"
+            />
+          </face>
+          <face>
+            <img
+              loading="lazy"
+              width="1044"
+              height="625"
+              src="@image"
+              alt="@title"
+              class="w-[58%] z-0 h-full rounded-l-[34px]"
+            />
+          </face>
+        </basis>
+      </section>
+      <basis core="list" datamembername="db.article-list">
+        <else-layout>
+          <div class="flex flex-col w-full justify-center items-center">
+            <p class="text-secondary-500">no articles found !</p>
+            <a
+              class="w-12 hover:scale-110 transition-all h-12 rounded-full bg-secondary-500 flex text-white justify-center items-center text-xs"
+              href="/"
+              >home</a
+            >
+          </div>
+        </else-layout>
+        <layout
+          ><section class="w-full mb-10 flex justify-center">
+            <div
+              class="w-full lg:w-[950px] xl:!w-[1280px] grid grid-cols-3 gap-4"
+            >
+              @child
+            </div>
+          </section>
+        </layout>
+        <face filter="link is null">
+          <article
+            class="h-[388px] overflow-hidden flex flex-col gap-3 relative border border-zinc-200 rounded-[34px]"
+          >
+            <a
+              href="/article.bc?lid=2&id=@id"
+              class="w-[129px] hoverd h-12 bg-secondary-500 rounded-full absolute flex justify-center items-center text-white text-sm top-[180px] right-5 z-[2]"
+              >Rede more</a
+            >
+            <img
+              loading="lazy"
+              width="419"
+              height="203"
+              src="@00419X00223prp"
+              alt="@title"
+              class="!w-full z-0 h-[203px] rounded-l-[34px] border-l-[9px] border-primary-500"
+            />
+            <h3 class="px-5 mt-6 line-clamp-2 text-lg text-zinc-900">@title</h3>
+            <p class="text-sm text-zinc-600 line-clamp-3 px-5">@prp_7244</p>
+          </article></face
+        >
+        <face>
+          <article
+            class="h-[388px] overflow-hidden flex flex-col gap-3 relative border border-zinc-200 rounded-[34px]"
+          >
+            <a
+              href="@link"
+              class="w-[129px] hoverd h-12 bg-secondary-500 rounded-full absolute flex justify-center items-center text-white text-sm top-[180px] right-5 z-[2]"
+              >Rede more</a
+            >
+            <img
+              loading="lazy"
+              width="419"
+              height="203"
+              src="@00419X00223prp"
+              alt="@title"
+              class="!w-full z-0 h-[203px] rounded-l-[34px] border-l-[9px] border-primary-500"
+            />
+            <h3 class="px-5 mt-6 line-clamp-2 text-lg text-zinc-900">@title</h3>
+            <p class="text-sm text-zinc-600 line-clamp-3 px-5">@prp_7244</p>
+          </article></face
+        >
+      </basis>
+
+      <div class="w-full flex mb-10 justify-center items-center gap-4">
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@sta='pre')">
+            <a
+              class="w-12 h-12 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              aria-label="angle-left"
+            >
+              <svg
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 15L1.5 8L8.5 1"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@page=[##cms.query.pagenum|(1)##])">
+            <a
+              class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+            >
+              @page
+            </a>
+          </face>
+          <face
+            filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no')"
+          >
+            <a
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              class="w-12 h-12 text-zinc-400 hover:bg-secondary-500 hover:text-white bg-zinc-100 hover:shadow-lg rounded-full flex justify-center items-center"
+            >
+              @page
+            </a>
+          </face>
+        </basis>
+
+        <basis core="print" datamembername="db.paging">
+          <face filter="(@sta='nex')">
+            <a
+              href="/[##cms.cms.link_page##]&pagenum=@page&catid=[##cms.query.catid##]"
+              aria-label="angle-right"
+              class="w-12 h-12 rotate-180 !text-white bg-primary-500 hover:bg-secondary-500 hover:shadow-lg rounded-full flex justify-center items-center"
+            >
+              <svg
+                width="10"
+                height="16"
+                viewBox="0 0 10 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 15L1.5 8L8.5 1"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </face>
+        </basis>
+      </div>
+    </main>
+    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+    <basis core="call" file="footer.inc" lid="2" />
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<basis
+  core="dbsource"
+  source="basiscore"
+  name="db"
+  mid="5"
+  lid="2"
+  usedforid="[##cms.cms.ownerid##]"
+>
+  <member name="info" type="view"></member>
+</basis>
+<div class="w-full header-t">
+  <header
+    class="w-full px-5 lg:!px-0 bg-white flex lg:!h-[84px] h-[64px] justify-center"
+  >
+    <div
+      class="w-full lg:w-[950px] xl:!w-[1280px] h-full flex items-center justify-between"
+    >
+      <a href="/">
+        <img
+          loading="lazy"
+          width="366"
+          height="120"
+          aria-label="hamta-logo"
+          decoding="async"
+          src="[##cms.cms.cdn##]/images/logo.png"
+          alt="hamta-logo"
+          class="lg:!w-[183px] lg:!h-[60px] w-[117px] h-[38px]"
+        />
+      </a>
+      <div class="lg:!flex desktop-navigation hidden gap-14 items-center">
+        <a
+          href="/"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >home</a
+        >
+        <a
+          href="/services"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >services</a
+        >
+        <a
+          href="/news"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >News</a
+        >
+        <a
+          href="/contact-us"
+          class="uppercase relative text-zinc-900 hover:text-secondary-500 transition-all"
+          >Contact us</a
+        >
+      </div>
+      <div
+        class="flex items-center gap-4 lg:!w-fit w-full send-from-header-to-nav"
+      >
+        <button
+          class="bg-zinc-800 relative text-white currency-rate rounded-full w-12 h-12 justify-center items-center"
+          type="button"
+        >
+          <span class="currency-loading absolute top-0 right-0 hidden"
+            ><i class="fas fa-spinner fa-spin"></i
+          ></span>
+          <div
+            class="currency-content flex w-full h-full items-center justify-center"
+          >
+            <div
+              data-active="0"
+              class="currency-selected flex w-full h-full items-center justify-center"
+              onclick="currency_selected(this)"
+            >
+              <svg
+                width="24"
+                height="26"
+                viewBox="0 0 24 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.00104 17.7295H13.3345C14.6233 17.7295 15.6675 16.6853 15.6675 15.3965C15.6675 14.1077 14.6233 13.0626 13.3345 13.0626H10.6679C9.37904 13.0626 8.33398 12.0184 8.33398 10.7295C8.33398 9.44072 9.37904 8.39648 10.6679 8.39648H15.0013"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.002 20.0625V6.0625"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="currency-list text-sm absolute z-10 rounded-[4px] shadow unvisible"
+          >
+            <div class="scroll">
+              <ul></ul>
+            </div>
+          </div>
+        </button>
+        <div
+          class="Login_Informati flex gap-1 whitespace-nowrap h-12 lg:!w-[187px] w-[80%] rounded-3xl bg-secondary items-center justify-center"
+        >
+          <basis core="call" file="authentication/modal" lid="2"></basis>
+        </div>
+      </div>
+      <button
+        id="open-menu"
+        class="lg:!hidden flex cursor-pointer"
+        type="button"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 20H4C3.448 20 3 19.553 3 19C3 18.447 3.448 18 4 18H20C20.552 18 21 18.447 21 19C21 19.553 20.552 20 20 20Z"
+            fill="#0057F8"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 6H4C3.448 6 3 5.553 3 5C3 4.447 3.448 4 4 4H20C20.552 4 21 4.447 21 5C21 5.553 20.552 6 20 6Z"
+            fill="#0057F8"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 13H4C3.448 13 3 12.553 3 12C3 11.447 3.448 11 4 11H20C20.552 11 21 11.447 21 12C21 12.553 20.552 13 20 13Z"
+            fill="#0057F8"
+          />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <div
+    class="fixed shooting bottom-[261px] hidden lg:!flex flex-col gap-3 left-5"
+  >
+    <basis core="print" datamembername="db.info">
+      <face filter="text in('WhatsApp')">
+        <a
+          class="first transition-all duration-300 ease-in-out"
+          href="@largetext"
+          target="_blank"
+          rel="noopener"
+          aria-label="@text"
+        >
+          <img
+            loading="lazy"
+            width="114"
+            height="110"
+            src="[##cms.cms.cdn##]/images/packet-2.png"
+            alt="whatsapp"
+            class="w-[57px] h-[55px]"
+          />
+        </a>
+      </face>
+    </basis>
+
+    <basis core="print" datamembername="db.info">
+      <face filter="TypeID=242">
+        <a
+          class="second transition-all duration-300 ease-in-out"
+          href="mailto:@text"
+        >
+          <img
+            loading="lazy"
+            width="114"
+            height="104"
+            src="[##cms.cms.cdn##]/images/packet.png"
+            alt="mail"
+            class="w-[57px] h-[57px]"
+          />
+        </a>
+      </face>
+    </basis>
+  </div>
+  <nav
+    class="w-screen z-[50] h-full transition-all duration-300 ease-in-out shadow-2xl mobile-menu fixed top-0 translate-x-[1280px] py-6 left-0 bg-white flex lg:!hidden flex-col gap-5 px-5"
+  >
+    <div class="flex items-center mb-14 justify-between w-full">
+      <img
+        loading="lazy"
+        width="366"
+        height="120"
+        aria-label="hamta-logo"
+        src="[##cms.cms.cdn##]/images/logo.png"
+        alt="hamta-logo"
+        class="w-[183px] h-[60px]"
+      />
+      <button id="closer-menu" type="button">
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 13 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M7.81295 6.50009L12.7277 1.58528C13.0908 1.22221 13.0908 0.635366 12.7277 0.2723C12.3646 -0.0907666 11.7778 -0.0907666 11.4148 0.2723L6.5 5.18711L1.58525 0.2723C1.22219 -0.0907666 0.635353 -0.0907666 0.272294 0.2723C-0.0907647 0.635366 -0.0907647 1.22221 0.272294 1.58528L5.18704 6.50009L0.272294 11.415C-0.0907647 11.778 -0.0907647 12.3649 0.272294 12.7279C0.453359 12.909 0.691065 13 0.928771 13C1.16648 13 1.40418 12.909 1.58525 12.7279L6.5 7.81317L11.4148 12.7279C11.5958 12.909 11.8335 13 12.0712 13C12.3089 13 12.5466 12.909 12.7277 12.7279C13.0908 12.3649 13.0908 11.778 12.7277 11.415L7.81295 6.50009Z"
+            fill="#FF90B5"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full give-it-from-header flex gap-4"></div>
+    <div class="flex flex-col desktop-navigation gap-10 mt-8">
+      <a
+        href="/"
+        class="uppercase w-fit relative text-zinc-900 hover:text-secondary-500 transition-all"
+        >home</a
+      >
+      <a
+        href="/services"
+        class="uppercase w-fit relative text-zinc-900 hover:text-secondary-500 transition-all"
+        >services</a
+      >
+      <a
+        href="/news"
+        class="uppercase w-fit relative text-zinc-900 hover:text-secondary-500 transition-all"
+        >News</a
+      >
+      <a
+        href="/contact-us"
+        class="uppercase w-fit relative text-zinc-900 hover:text-secondary-500 transition-all"
+        >Contact us</a
+      >
+    </div>
+  </nav>
+</div>
