@@ -710,10 +710,13 @@ video {
 .h-\[448px\] {
   height: 448px;
 }
-.\!h-\[448px\],
-.hotel-page img {
+.\!h-\[448px\] {
   height: 448px !important;
 }
+.\!h-\[468px\] {
+  height: 488px !important;
+}
+
 .h-\[70px\] {
   height: 70px;
 }
@@ -1493,16 +1496,7 @@ video {
 .duration-300 {
   transition-duration: 0.3s;
 }
-@font-face {
-  font-family: Aboreto;
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/Aboreto-Regular.ttf");
-}
-*,
-html {
-  font-family: Aboreto;
-}
+
 .desktop-navigation a::before {
   opacity: 0;
   transition: 0.2s ease-in-out;

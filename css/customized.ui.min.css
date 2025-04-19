@@ -660,14 +660,29 @@ video {
   --zinc-50: #fafafa;
 }
 @font-face {
-  font-family: Aboreto;
-  font-weight: 400;
+  font-display: swap;
+  font-family: Dana;
   font-style: normal;
-  src: url("../fonts/Aboreto-Regular.ttf");
+  font-weight: 400;
+  src: url("../_fonts/Dana-Regular.woff") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: Dana-Medium;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../_fonts/Dana-Medium.woff") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: Dana-Bold;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../_fonts/Dana-Bold.woff") format("truetype");
 }
 *,
 html {
-  font-family: Aboreto;
+  font-family: Dana !important;
 }
 .desktop-navigation a::before {
   opacity: 0;
@@ -937,12 +952,38 @@ html {
 .currency-selected div {
   font-size: 14px !important;
 }
+.hotel-page img {
+  width: 100% !important;
+  height: 485px !important;
+}
 @media not all and (min-width: 640px) {
+  .hotel-page p img {
+    width: 100% !important;
+    height: fit-content !important;
+  }
+  .swiper-d {
+    border-radius: 8px !important;
+  }
+  .vfc-articles .img-article-cont img {
+    width: 100% !important;
+  }
   .currency-list {
     right: -6.6rem !important;
     box-shadow: rgba(14, 30, 37, 0.12) 0 2px 4px 0,
       rgba(14, 30, 37, 0.32) 0 2px 16px 0 !important;
   }
+  .shooting {
+    bottom: 10px !important;
+  }
+  .shooting a img {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 60% !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }
+}
+.shooting {
+  z-index: 40;
 }
 @media (max-width: 1024px) {
   .btnstyle span:not(.hasNot-login-icon) {
@@ -982,4 +1023,22 @@ svg.user-profile-arrow {
 .has-select-input::before,
 .has-select::before {
   font-weight: 400 !important;
+}
+.logoutConfirm {
+  color: #bd252a !important;
+}
+.user-profile-body .logoutConfirm {
+  color: #bd252a !important;
+}
+.hotelbc-c h1 {
+  font-size: 1.4rem !important;
+}
+.hotelbc-c div.text-xl {
+  font-weight: bold !important;
+}
+.hotel-page img {
+  margin: 1.6rem 0 !important;
+}
+.swiper-four .swiper-slide .bg-bgtf {
+  top: 2px !important;
 }

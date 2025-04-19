@@ -20,7 +20,6 @@
   <member name="data" type="view" request="rdfa" />
 </basis>
 
-
 <basis
   core="dbsource"
   source="media"
@@ -72,73 +71,70 @@
     <basis core="call" file="header.inc" lid="2" />
     <main class="w-full hotel-page overflow-x-hidden flex justify-center">
       <div class="w-full hotelbc-c my-7 px-5 flex flex-col gap-4">
-       <basis core="list" datamembername="db.gallery">
-        <layout>
+        <basis core="list" datamembername="db.gallery">
+          <layout>
             <div class="swiper-d relative !h-[448px] w-full overflow-hidden">
-          <div class="swiper-wrapper">
-           
-            @child
-          </div>
-          <div class="swiper-button-next-f absolute z-20 top-[50%] left-2">
-            <div
-              class="w-[70px] rotate-180 h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-            >
-              <div
-                class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-              >
+              <div class="swiper-wrapper">@child</div>
+              <div class="swiper-button-next-f absolute z-20 top-[50%] left-2">
                 <div
-                  class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
+                  class="w-[70px] rotate-180 h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
                 >
-                  <svg
-                    width="14"
-                    height="24"
-                    viewBox="0 0 14 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
                   >
-                    <path
-                      d="M2 2L12 12L2 22"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="square"
-                    />
-                  </svg>
+                    <div
+                      class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
+                    >
+                      <svg
+                        width="14"
+                        height="24"
+                        viewBox="0 0 14 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 2L12 12L2 22"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="square"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev-f absolute z-20 top-[50%] right-2">
+                <div
+                  class="w-[70px] h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
+                >
+                  <div
+                    class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
+                  >
+                    <div
+                      class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
+                    >
+                      <svg
+                        width="14"
+                        height="24"
+                        viewBox="0 0 14 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2 2L12 12L2 22"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="square"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-button-prev-f absolute z-20 top-[50%] right-2">
-            <div
-              class="w-[70px] h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-            >
-              <div
-                class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-              >
-                <div
-                  class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                >
-                  <svg
-                    width="14"
-                    height="24"
-                    viewBox="0 0 14 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 2L12 12L2 22"
-                      stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="square"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> 
-        </layout>
-        <face>
-           <div class="swiper-slide overflow-hidden">
+          </layout>
+          <face>
+            <div class="swiper-slide overflow-hidden">
               <img
                 loading="lazy"
                 src="@largeIMG"
@@ -146,11 +142,17 @@
                 class="w-full rounded-lg h-[448px]"
               />
             </div>
-        </face>
-      </basis>
-        
+          </face>
+        </basis>
         <basis core="print" datamembername="db.view">
-          <face filter="TypeID<>159 and TypeID<>200 and TypeID<>128">
+          <face filter="TypeID=150">
+            <h1 class="text-xl text-zinc-900 font-bold">@text</h1>
+          </face>
+        </basis>
+        <basis core="print" datamembername="db.view">
+          <face
+            filter="TypeID<>159 and TypeID<>200 and TypeID<>150 and TypeID<>128"
+          >
             <div class="text-xl text-zinc-900">@text</div>
             <div class="text-sm">@largetext</div>
           </face>
@@ -160,7 +162,7 @@
           <face filter="prpID=3087641">
             <iframe
               defer=""
-              title="tinab"
+              title=""
               class="inline !rounded-lg !w-full align-middle !border-0 border-none"
               height="279"
               loading="lazy"
