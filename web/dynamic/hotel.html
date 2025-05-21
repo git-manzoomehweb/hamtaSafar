@@ -1,185 +1,100 @@
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  lid="2"
-  mid="1"
-  usedforid="[##cms.query.id##]"
->
+<basis core="dbsource" source="basiscore" name="db" lid="2" mid="1" usedforid="[##cms.query.id##]">
   <member request="json-ld" type="scalar" name="json" />
 </basis>
-<basis
-  core="dbsource"
-  source="basiscore"
-  name="db"
-  mid="1"
-  lid="2"
-  usedforid="[##cms.query.id##]"
->
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="2" usedforid="[##cms.query.id##]">
   <member propertyid="7249" name="view" type="view" />
   <member name="data" type="view" request="rdfa" />
 </basis>
 
-<basis
-  core="dbsource"
-  source="media"
-  lid="2"
-  name="db"
-  usedforid="[##cms.query.id##]"
-  sourcemid="article"
->
+<basis core="dbsource" source="media" lid="2" name="db" usedforid="[##cms.query.id##]" sourcemid="article">
   <member type="list" name="gallery" format="4" order="ord"></member>
 </basis>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
-    <meta
-      name="description"
-      content="[##cms.seo.description|(Hamta tourism agency)##]"
-    />
-    <basis
-      core="dbsource"
-      source="hosting"
-      name="tag"
-      urlid="[##cms.seo.urlid##]"
-    >
-      <member type="list" name="list" request="taglist" preview=""></member>
-    </basis>
-    <basis core="print" datamembername="tag.list">
-      <face filter="key = 'canonical'">
-        <link rel="canonical" href="@value" />
-      </face>
-      <face>
-        <meta property="@key" content="@value" />
-      </face>
-    </basis>
-    <link
-      rel="stylesheet"
-      href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css"
-    />
-    <basis core="call" file="pwa.inc" lid="2" />
-    <basis core="call" file="style.inc" lid="2" />
-  </head>
 
-  <body class="relative">
-    <basis core="call" file="header.inc" lid="2" />
-    <main class="w-full hotel-page overflow-x-hidden flex justify-center">
-      <div
-        class="w-full hotelbc-c lg:w-[950px] my-7 xl:!w-[1280px] flex flex-col gap-4"
-      >
-        <basis core="list" datamembername="db.gallery">
-          <layout>
-            <div
-              class="swiper-d rounded-lg relative !h-[468px] w-full overflow-hidden"
-            >
-              <div class="swiper-wrapper">@child</div>
-              <div class="swiper-button-next-f absolute z-20 top-[50%] left-2">
-                <div
-                  class="w-[70px] rotate-180 h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                >
-                  <div
-                    class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                  >
-                    <div
-                      class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                    >
-                      <svg
-                        width="14"
-                        height="24"
-                        viewBox="0 0 14 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2 2L12 12L2 22"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="square"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-button-prev-f absolute z-20 top-[50%] right-2">
-                <div
-                  class="w-[70px] h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                >
-                  <div
-                    class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                  >
-                    <div
-                      class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]"
-                    >
-                      <svg
-                        width="14"
-                        height="24"
-                        viewBox="0 0 14 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2 2L12 12L2 22"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="square"
-                        />
-                      </svg>
-                    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
+  <title>[##cms.seo.title|(Hamta tourism agency)##]</title>
+  <meta name="description" content="[##cms.seo.description|(Hamta tourism agency)##]" />
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+    <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+    <face filter="key = 'canonical'">
+      <link rel="canonical" href="@value" />
+    </face>
+    <face>
+      <meta property="@key" content="@value" />
+    </face>
+  </basis>
+  <link rel="stylesheet" href="[##cms.cms.cdn##]/_css/swiper-bundle.min.css" />
+  <basis core="call" file="pwa.inc" lid="2" />
+  <basis core="call" file="style.inc" lid="2" />
+</head>
+
+<body class="relative">
+  <basis core="call" file="header.inc" lid="2" />
+  <main class="w-full hotel-page overflow-x-hidden flex justify-center">
+    <div class="w-full hotelbc-c lg:w-[950px] my-7 xl:!w-[1280px] flex flex-col gap-4">
+      <basis core="list" datamembername="db.gallery">
+        <layout>
+          <div class="swiper-d rounded-lg relative !h-[468px] w-full overflow-hidden">
+            <div class="swiper-wrapper">@child</div>
+            <div class="swiper-button-next-f absolute z-20 top-[50%] left-2">
+              <div class="w-[70px] rotate-180 h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                <div class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                  <div class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 2L12 12L2 22" stroke="white" stroke-width="2" stroke-linecap="square" />
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
-          </layout>
-          <face>
-            <div class="swiper-slide overflow-hidden">
-              <img
-                loading="lazy"
-                src="@largeIMG"
-                alt="@name"
-                class="w-full rounded-lg h-[468px]"
-              />
+            <div class="swiper-button-prev-f absolute z-20 top-[50%] right-2">
+              <div class="w-[70px] h-[70px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                <div class="w-[58px] h-[58px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                  <div class="w-[48px] h-[48px] flex justify-center items-center rounded-full bg-[#FFFFFF33]">
+                    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 2L12 12L2 22" stroke="white" stroke-width="2" stroke-linecap="square" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
-          </face>
-        </basis>
+          </div>
+        </layout>
+        <face>
+          <div class="swiper-slide overflow-hidden">
+            <img loading="lazy" src="@largeIMG" alt="@name" class="w-full rounded-lg h-[468px]" />
+          </div>
+        </face>
+      </basis>
 
-        <basis core="print" datamembername="db.view">
-          <face filter="TypeID=150">
-            <h1 class="text-xl text-zinc-900 font-bold">@text</h1>
-          </face>
-        </basis>
-        <basis core="print" datamembername="db.view">
-          <face
-            filter="TypeID<>159  and TypeID<>200 and TypeID<>128 and TypeID<>150"
-          >
-            <div class="text-xl text-zinc-900">@text</div>
-            <div class="text-sm">@largetext</div>
-          </face>
-        </basis>
+      <basis core="print" datamembername="db.view">
+        <face filter="TypeID=150">
+          <h1 class="text-xl text-zinc-900 font-bold">@text</h1>
+        </face>
+      </basis>
+      <basis core="print" datamembername="db.view">
+        <face filter="TypeID<>159  and TypeID<>200 and TypeID<>128 and TypeID<>150">
+          <div class="text-xl text-zinc-900">@text</div>
+          <div class="text-sm">@largetext</div>
+        </face>
+      </basis>
 
-        <basis core="print" datamembername="db.view">
-          <face filter="prpID=3087641">
-            <iframe
-              defer=""
-              title=""
-              class="inline !rounded-lg !w-full align-middle !border-0 border-none"
-              height="279"
-              loading="lazy"
-              target="_blank"
-              allowfullscreen=""
-              src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"
-            ></iframe>
-          </face>
-        </basis>
-      </div>
-    </main>
-    <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
-    <basis core="call" file="footer.inc" lid="2" />
-  </body>
+      <basis core="print" datamembername="db.view">
+        <face filter="prpID=3087641">
+          <iframe defer="" title="" class="inline !rounded-lg !w-full align-middle !border-0 border-none" height="279"
+            loading="lazy" target="_blank" allowfullscreen=""
+            src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"></iframe>
+        </face>
+      </basis>
+    </div>
+  </main>
+  <script src="[##cms.cms.cdn##]/_js/swiper-bundle.11.2.5.min.js "></script>
+  <basis core="call" file="footer.inc" lid="2" />
+</body>
+
 </html>

@@ -952,10 +952,6 @@ html {
 .currency-selected div {
   font-size: 14px !important;
 }
-.hotel-page img {
-  width: 100% !important;
-  height: 485px !important;
-}
 @media not all and (min-width: 640px) {
   .hotel-page p img {
     width: 100% !important;
